@@ -1,0 +1,51 @@
+.flasche{
+    height: 400px;
+}
+
+.marille-info-container {
+    height: 65vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .marille-info-container .visible {
+    opacity: 1;
+    transition: opacity 1.5s ease-in;
+  }
+  
+  .marille-info-container .marille-info-container-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .marille-info-header {
+    font-size: 6rem;
+    margin: 0;
+    padding: 0;
+    font-family: shelley;
+  }
+  
+  .marille-info-subheader {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    width: 35vw;
+    line-height: 2.5rem;
+  }
+
+  .marillen-info-footter{
+    
+  }
+
+  .banner{
+    height: 30vh;
+    width: 100%;
+    aspect-ratio: 16/9;
+    
+  }
+  
