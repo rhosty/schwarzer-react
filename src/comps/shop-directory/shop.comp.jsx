@@ -18,8 +18,10 @@ const Shop = () => {
 
     const rotationHandler = (e) => {
         const start = (e.target.style.transform.split('rotate(')[1].split('deg)')[0])
-        const targetDif = (270 - start);
+        const goal = 270;
+        const targetDif = (goal - start);
         setRotation(targetDif)
+        console.log(rotation)
        
         
     }
