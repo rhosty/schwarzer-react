@@ -7,6 +7,7 @@ import ProductPreview from './comps/product preview/product.preview.comp';
 import TschinInfo from './comps/tschin-info/tschin.info.comp';
 import WhoInfo from './comps/who-info/who.info.comp';
 import TastingRoom from './comps/tasting-room/tasting.room.comp';
+import Shop from './comps/shop-directory/shop.comp';
 
 const App = () => {
   const location = useLocation();
@@ -23,6 +24,8 @@ const App = () => {
           <Route path="/preview" element={<ProductPreview />} />
           <Route path="/who" element={<WhoInfo />} />
           <Route path="/tasting" element={<TastingRoom />} />
+          <Route path="/shop" element={<Shop />} />
+
 
         </Routes>
       </CSSTransition>
