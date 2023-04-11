@@ -2,19 +2,19 @@
     height: 400px;
 }
 
-.marille-info-container {
+.birne-info-container {
     height: 65vh;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
   }
   
-  .marille-info-container .visible {
+  .birne-info-container .visible {
     opacity: 1;
     transition: opacity 1.5s ease-in;
   }
   
-  .marille-info-container .marille-info-container-text {
+  .birne-info-container .birne-info-container-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,14 +23,14 @@
     text-align: center;
   }
   
-  .marille-info-header {
+  .birne-info-header {
     font-size: 6rem;
     margin: 0;
     padding: 0;
     font-family: shelley;
   }
   
-  .marille-info-subheader {
+  .birne-info-subheader {
     font-size: 1rem;
     margin: 0;
     padding: 0;
@@ -38,7 +38,7 @@
     line-height: 2.5rem;
   }
 
-  .marillen-info-footter{
+  .birnen-info-footter{
     
   }
 
@@ -46,10 +46,6 @@
     height: 30vh;
     width: 100%;
     aspect-ratio: 16/9;
-    
-  }
-
-  .marillen-info-container-left{
     
   }
   

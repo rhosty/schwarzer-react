@@ -46,10 +46,29 @@
     height: 30vh;
     width: 100%;
     aspect-ratio: 16/9;
+    margin-bottom: 50px;
     
   }
 
-  .marillen-info-container-left{
-    
+  .back-arrow-container{
+    position: fixed;
+    transform: rotate(90deg);
+    top: 20px;
+    left: 20px;
+  }
+
+  .back-arrow{
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    opacity: 0.5;
+  }
+
+  .back-arrow:hover{
+    opacity: 1;
+  }
+
+  .back-arrow.white {
+    color: white;
   }
   

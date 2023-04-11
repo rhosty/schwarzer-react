@@ -1,12 +1,25 @@
-import Background from './background.webp';
+import Background from '../../assets/background.webp'
 import { Link } from 'react-router-dom';
 import './hero.comp.styles.css';
-import WhiteFinger from './whitefinger.png';
-import Burger from './burger.png';
-import ArrowDown from './arrowdown.png';
+import WhiteFinger from '../../assets/whitefinger.png';
+import Burger from '../../assets/burger.png';
+import ArrowDown from '../../assets/arrowdown.png';
 import { CSSTransition } from 'react-transition-group';
+import { useState } from 'react';
+import NavDropDown from '../nav/nav.comp';
 
 const Hero = () => {
+
+  const [isOpen, setIsOpen] = useState(false)
+
+  const DropDownHandler = () => {
+    setIsOpen(!isOpen)
+    console.log(isOpen)
+    return
+  }
+
+  const burgerClassname = !isOpen ? 'burger' : ' burger open';
+
 
   return (
     <>
@@ -17,7 +30,7 @@ const Hero = () => {
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
           height: '100vh',
-          aspectRatio: '16/10',
+          aspectRatio: '16/7',
         }}
         className='background'
       ></div>
@@ -25,7 +38,8 @@ const Hero = () => {
       <div className='nav-bar'>
         <div className='placeholder'></div>
         <div className='placeholder'></div>
-        <img className='burger' src={Burger}></img>
+        <img onClick={DropDownHandler} className={burgerClassname} src={Burger}></img>
+        { isOpen ? <NavDropDown clickHandler={DropDownHandler} />  : null  }
       </div>
       <div className='hero-main'>
         <img className='hero-logo' src={WhiteFinger} alt='WhiteFinger Logo' />

@@ -27,12 +27,12 @@ code {
   transform: translateY(0%);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
-.page-exit {
-  opacity: 1;
+/* .page-exit {
+  opacity: 0;
   transform: translateY(0%);
-}
-.page-exit-active {
+} */
+/* .page-exit-active {
   opacity: 0;
   transform: translateY(-100%);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
+} */

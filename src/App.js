@@ -2,9 +2,11 @@ import {Routes, Route, useLocation} from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 import {Fragment} from 'react';
 import Hero from '../../schwarzer/src/comps/hero/hero.comp';
-import MarilleInfo from '../../schwarzer/src/comps/marille-info/marille.info.comp';
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import ProductPreview from './comps/product preview/product.preview.comp';
+import TschinInfo from './comps/tschin-info/tschin.info.comp';
+import WhoInfo from './comps/who-info/who.info.comp';
+import TastingRoom from './comps/tasting-room/tasting.room.comp';
 
 const App = () => {
   const location = useLocation();
@@ -19,6 +21,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/preview" element={<ProductPreview />} />
+          <Route path="/who" element={<WhoInfo />} />
+          <Route path="/tasting" element={<TastingRoom />} />
+
         </Routes>
       </CSSTransition>
     </TransitionGroup>
