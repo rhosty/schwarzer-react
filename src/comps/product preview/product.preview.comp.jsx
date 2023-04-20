@@ -7,8 +7,17 @@ import BackArrow from '../../assets/backarrow.png'
 import { useRef, useState, useEffect } from "react";
 import BackWhite from '../../assets/back-white.png'
 import './product.styles.css'
+import autoAnimate from '@formkit/auto-animate'
+import ShoppingBag from '../../assets/shoppingbag.png'
+
 
 const ProductPreview = () => {
+
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+        }, []);
 
     const [colorBackArrow, setColorBackArrow] = useState(BackArrow);
 
@@ -16,6 +25,10 @@ const ProductPreview = () => {
     
     const BackHandler = () => {
         navigate('/');
+    }
+
+    const ShopHandler = () => {
+        navigate('/shop');
     }
 
     const getWindowHeight = () => {
@@ -37,15 +50,18 @@ const ProductPreview = () => {
     }, []);
 
     return (
-        <div className="container-overview">
-            <div className='back-arrow-container'>
-                <img onClick={BackHandler} className='back-arrow' src={colorBackArrow} />
-            </div>                
-            <TschinInfo />
-            <BirnenInfo />
-            <MarilleInfo />
-            <WermuthInfo />
-        </div>
+        
+        <div className={`container-overview ${mounted ? 'fade-in' : ''}`}>
+        <div className='back-arrow-container'>
+        <img onClick={ShopHandler} className="shopping-bag" src={ShoppingBag}></img>
+        <img onClick={BackHandler} className='back-arrow' src={colorBackArrow} />
+      </div>
+      
+    <TschinInfo />
+    <BirnenInfo />,
+    <MarilleInfo />,
+    <WermuthInfo />,
+  </div>
     )
 }
 

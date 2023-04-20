@@ -1,29 +1,190 @@
-.item{
+:root{
+    --wermuth: #E3A348;
+    --gin: #4D4B60;
+    --marille: #FED232;
+    --birne: #B69C48;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+.main{
+    overflow: hidden;
+    overflow-x: hidden;
+    height: 100vh;
+    width: 100vw;
+   }
+ 
+
+.item-bottle{
     max-height: 30vh;
+    cursor: pointer;
+    transform: scale(.5);
 }
 
-.finger{
-    height: 200px;
-    position: absolute;
-    top: calc(50% - -45px);
-    left: calc(50% - 9px);
+.item-bottle.clicked {
+    transition: 1.5s;
+    max-height: 42vh;
+    transform: scale(1.5);
+    
+  }
 
+.shopw-wrapper{
+    overflow: hidden;
 }
 
-/* .product0{
-    position: absolute;
-    left: calc(50% - 82px);
-} */
+
 
 .shop-container{
- 
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    width: 100vw;
     position: absolute;
     transition: transform 1.5s;
+    top: 0;
+    height: 100vh;
+    width: 50vw;
+    left: 70vw;
+    z-index: 20;
+    
+    
     
 }
 
+.shop-info-container{
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+    z-index: 0;
+    align-items: start;
+    justify-content: center;
+    text-align: left;
+    gap: 75px;
+    margin-left: 7vw;
+    margin-top: -7vh;
+
+    
+}
+
+.top-container{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    height: 100vh;
+    margin: 40px;   
+}
+
+.shop-info-title{
+    margin-bottom: 30px;
+    font-size: 6rem;
+    font-family: shelley;
+}
+
+.shop-info-text{
+    font-family: itc-kabel;
+    font-family: 2.5rem;
+    margin-bottom: 30px ;
+}
+
+.checkout{
+    background-color: black;
+
+}
+
+.cart-button{
+    height: 6vh;
+    width: 11vw;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.shop-arrow{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 50px;
+    width: 50px;
+    transform: rotate(90deg);
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.shop-arrow:hover{
+    opacity: 1;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+  }
+  
+  .fade-out {
+    opacity: 1;
+    animation: fadeOut 1s ease-in forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+
+.shop-title{
+    font-family: shelley;
+    font-size: 6rem;
+    margin-bottom: 30px;
+}
+
+.shop-description{
+    font-family: itc-kabel;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+  @media  screen and (max-width: 1100px) {
+    .top-container{
+        display: grid;
+
+    }
+
+    .shop-info-container{
+        display: flex;
+        flex-direction: column;
+        width: 30vw;
+        height: 100vh;
+    }
+
+    .tablet-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        height: 100vh;
+        overflow: scroll;
+        background-size: contain;
+        background-repeat: repeat;
+        
+    }
+
+    
+
+    img{
+        height: 200px;
+    }
+  }
+    
+   

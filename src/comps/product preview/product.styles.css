@@ -1,4 +1,30 @@
 .container-overview{
     overflow-y: auto;
+    overflow-x: hidden;
     height: 100%;
+    opacity: 0;
+  transition: opacity 0.5s ease-in;
+    
 }
+
+.example-appear {
+    opacity: 0.01;
+  }
+  
+  .example-appear.example-appear-active {
+    opacity: 1;
+    transition: opacity .5s ease-in;
+  }
+
+  .container-overview.fade-in {
+    opacity: 1;
+  }
+
+  
+
+  /* .back-arrow-container{
+    display: flex;
+    
+  } */
+
+ 

@@ -120,5 +120,14 @@
     margin-top: 150px;
     margin-bottom: 40px;
     height: 22vh;
+    width: 100vw;
 
+}
+
+.who-info-wrapper{
+    margin: 0 100px;
+}
+
+.box-wrapper{
+    margin: 0 100px;
 }

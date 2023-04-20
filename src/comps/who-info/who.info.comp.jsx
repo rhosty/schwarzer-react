@@ -8,10 +8,13 @@ import Footer from './footer.png'
 const WhoInfo = () => {
     return(
         <>
+        
         <div className='vertical-line'></div>
         <div>
             <img className='header-image' src={Banner}></img>
         </div>
+        <div className='box-wrapper'>
+        <div className='who-info-wrapper'></div>
         <div className="timeline-container">
             <div className="time-line-container-left">
                 <div className="time-line-container-left-image">
@@ -40,9 +43,11 @@ const WhoInfo = () => {
                 <img className='fallstaff' src={Fallstaff}></img>
             </div>
         </div>
+        </div>
         <div >
             <img className="footer" src={Footer}></img>
         </div>
+        
         </>
     )
 }
