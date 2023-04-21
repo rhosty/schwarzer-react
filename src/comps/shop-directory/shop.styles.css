@@ -92,7 +92,7 @@ body {
 
 }
 
-.cart-button{
+/* .cart-button{
     height: 6vh;
     width: 11vw;
     border: none;
@@ -100,7 +100,7 @@ body {
     border-radius: 5px;
     color: white;
     cursor: pointer;
-}
+} */
 
 .shop-arrow{
     position: absolute;

@@ -1,0 +1,9 @@
+.cart-button{
+    height: 6vh;
+    width: 11vw;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
