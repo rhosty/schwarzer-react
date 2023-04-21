@@ -3,11 +3,11 @@ import { Info } from '../../product-directory/product.info';
 
 import '../shop-directory/shop.styles.css';
 
-const ShopInfo = ({name, description}) => {
+const ShopInfo = ({name, description, buttonColor}) => {
 
     const [product, setProduct] = useState(0)
     // const {name, description} = Info[product]
-    const [buttonColor, setButtonColor] = useState('var(--gin)')
+    
     
 
     return(

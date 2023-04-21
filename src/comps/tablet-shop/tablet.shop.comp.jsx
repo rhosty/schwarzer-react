@@ -10,8 +10,10 @@ const TabletShop = () => {
 
     const products = [ Marille, Wermuth, Marille, Marille, Marille,  Wermuth, Marille, Marille];
     let [currentPicture, setCurrentPicture] = useState(0)
+    
     const [product, setProduct] = useState(0)
     const {name, description} = Info[product]
+    const [buttonColor, setButtonColor] = useState('var(--gin)')
     console.log(name)
 
     
@@ -21,12 +23,36 @@ const TabletShop = () => {
         if(currentPicture <= 6)
      setCurrentPicture(currentPicture = currentPicture + 1)
      setProduct(currentPicture)
+     if(currentPicture === 0 || currentPicture ===4) {
+        setButtonColor('var(--gin)')
+      }
+      if(currentPicture === 1 || currentPicture === 5) {
+        setButtonColor('var(--marille)')
+      }
+      if(currentPicture === 2 || currentPicture === 6) {
+        setButtonColor('var(--wermuth)')
+      }
+      if(currentPicture === 3 || currentPicture === 7) {
+        setButtonColor('var(--birne)')
+      }             
     }
 
     const imageSliderDown = () => {
       if( currentPicture >= 1)
         setCurrentPicture(currentPicture = currentPicture - 1)
         setProduct(currentPicture)
+        if(currentPicture === 0 || currentPicture ===4) {
+            setButtonColor('var(--gin)')
+          }
+          if(currentPicture === 1 || currentPicture === 5) {
+            setButtonColor('var(--marille)')
+          }
+          if(currentPicture === 2 || currentPicture === 6) {
+            setButtonColor('var(--wermuth)')
+          }
+          if(currentPicture === 3 || currentPicture === 7) {
+            setButtonColor('var(--birne)')
+          }             
 
     }
 
@@ -34,7 +60,7 @@ const TabletShop = () => {
     return(
         <>
         
-            <ShopInfo name={name} description={description} />
+            <ShopInfo buttonColor={buttonColor} name={name} description={description} />
        
 
            <div className='bottle-container'>

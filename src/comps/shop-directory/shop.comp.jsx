@@ -79,10 +79,10 @@ const Shop = () => {
 
         {windowWidth < 1100 ? 
         
-        <div className='tablet-container'><TabletShop product={product} name={name} description={description} /></div> 
+        <div className='tablet-container'><TabletShop product={product} name={name} description={description} buttonColor={buttonColor} /></div> 
         : 
           <div>
-            <ShopInfo product={product} name={name} description={description} />
+            <ShopInfo product={product} name={name} description={description} buttonColor={buttonColor} />
             <div className="shop-container" style={{transform:`rotate(${rotation}deg)`}}>
           {products.map((product, index) => (
             <img
