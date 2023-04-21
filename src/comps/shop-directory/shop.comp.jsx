@@ -8,6 +8,7 @@ import BackArrow from '../../assets/backarrow.png';
 import { useNavigate } from 'react-router-dom';
 import { Info } from '../../product-directory/product.info';
 import TabletShop from '../tablet-shop/tablet.shop.comp';
+import ShopInfo from '../shop-info/shop.info.comp';
 
 
 const Shop = () => {
@@ -20,13 +21,14 @@ const Shop = () => {
     const radius = 260; 
 
     const [rotation, setRotation] = useState(0)
+    const [clicked, setClicked] = useState(0)
    
   
    const backHandler = () => {
         navigate('/')
    }
 
-    const rotationHandler = (e, products) => {
+    const rotationHandler = (e) => {
       console.log(window.innerWidth)
         const start = (e.target.style.transform.split('rotate(')[1].split('deg)')[0])
         const goal = 180;
@@ -34,7 +36,6 @@ const Shop = () => {
         setRotation(targetDif)
         const index = parseInt(e.target.id, 10);
           setProduct(index);
-          setClicked(index)
           console.log(index)
           if(index === 0 || index ===4) {
             setButtonColor('var(--gin)')
@@ -53,7 +54,6 @@ const Shop = () => {
     const [product, setProduct] = useState(0)
     const {name, description} = Info[product]
     const [buttonColor, setButtonColor] = useState('var(--gin)')
-    const [clicked, setClicked] = useState(null)
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
 
@@ -74,21 +74,14 @@ const Shop = () => {
         <div className='main'>
         <img onClick={backHandler} className='shop-arrow' src={BackArrow}></img>
          <div className='top-container'>
-        <div className='shop-info-container'>
-          <span className='shop-title' >{name}</span>
-          <span className='shop-description' >{description}</span>
-          <div className='button-container'>
-            <button style={{background: buttonColor}} className='cart-button'>Add To Cart</button>
-            <button className='cart-button checkout'>Checkout</button>
-          </div>
-        </div>
+          <ShopInfo product={product} name={name} description={description} />
+       
 
         {windowWidth < 1100 ? 
         
-        <div className='tablet-container'><TabletShop product={product} /></div> 
-        
+        <div className='tablet-container'><TabletShop product={product} name={name} description={description} /></div> 
         : 
-        
+          
         <div className="shop-container" style={{transform:`rotate(${rotation}deg)`}}>
           {products.map((product, index) => (
             <img

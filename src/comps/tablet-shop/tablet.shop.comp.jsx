@@ -3,11 +3,14 @@ import Wermuth from '../../assets/wermuthNOBG.png';
 import './tablet.shop.styles.css';
 import { useState } from 'react';
 import { click } from '@testing-library/user-event/dist/click';
+import ShopInfo from '../shop-info/shop.info.comp';
 
-const TabletShop = () => {
+const TabletShop = ({name, description}) => {
 
     const products = [ Marille, Wermuth, Marille, Marille, Marille,  Wermuth, Marille, Marille];
     let [currentPicture, setCurrentPicture] = useState(0)
+
+    
     
    
     const imageSliderUp = () => {
@@ -24,6 +27,8 @@ const TabletShop = () => {
     return(
         <>
         
+            {/* <ShopInfo name={name} description={description} /> */}
+       
 
            <div className='bottle-container'>
             <span onClick={imageSliderUp}>&#9650;</span>
