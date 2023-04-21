@@ -74,15 +74,16 @@ const Shop = () => {
         <div className='main'>
         <img onClick={backHandler} className='shop-arrow' src={BackArrow}></img>
          <div className='top-container'>
-          <ShopInfo product={product} name={name} description={description} />
+          {/* <ShopInfo product={product} name={name} description={description} /> */}
        
 
         {windowWidth < 1100 ? 
         
         <div className='tablet-container'><TabletShop product={product} name={name} description={description} /></div> 
         : 
-          
-        <div className="shop-container" style={{transform:`rotate(${rotation}deg)`}}>
+          <div>
+            <ShopInfo product={product} name={name} description={description} />
+            <div className="shop-container" style={{transform:`rotate(${rotation}deg)`}}>
           {products.map((product, index) => (
             <img
                 alt='product'
@@ -98,7 +99,9 @@ const Shop = () => {
               }}
             />
           ))}
-        </div>}
+        </div>
+          </div>
+        }
             
         </div>
         </div>  
