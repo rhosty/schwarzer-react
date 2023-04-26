@@ -7,10 +7,37 @@ import ArrowDown from '../../assets/arrowdown.png';
 import { CSSTransition } from 'react-transition-group';
 import { useState } from 'react';
 import NavDropDown from '../nav/nav.comp';
+import { Info } from '../../product-directory/product.info';
+import { useEffect } from 'react';
+import { getCategorisAndDocs } from '../../utill/firebase';
+import { useContext } from 'react';
+import { CategoryContext } from '../contexts/categorie.ctx';
 
 const Hero = () => {
 
+  // const [categories, setCategories] = useState({});
+  const {categories, setCategories} = useContext(CategoryContext);
+
+  useEffect(() => {
+      async function fetchCategories() {
+        const categoriesData = await getCategorisAndDocs();
+        setCategories(categoriesData);
+        
+      }
+  
+      fetchCategories();
+    }, []);
+  
+    useEffect(() => {
+      setCategories(categories);
+      console.log(categories)
+    }, [categories]);
+
+
   const [isOpen, setIsOpen] = useState(false)
+ 
+
+
 
   const DropDownHandler = () => {
     setIsOpen(!isOpen)

@@ -20,7 +20,7 @@ const TabletShop = () => {
     
    
     const imageSliderUp = () => {
-        if(currentPicture <= 6)
+        if(currentPicture < 6)
      setCurrentPicture(currentPicture = currentPicture + 1)
      setProduct(currentPicture)
      if(currentPicture === 0 || currentPicture ===4) {

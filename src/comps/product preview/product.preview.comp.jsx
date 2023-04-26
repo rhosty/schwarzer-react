@@ -9,9 +9,17 @@ import BackWhite from '../../assets/back-white.png'
 import './product.styles.css'
 import autoAnimate from '@formkit/auto-animate'
 import ShoppingBag from '../../assets/shoppingbag.png'
+import { Info } from "../../product-directory/product.info";
 
 
 const ProductPreview = () => {
+
+   
+
+
+
+    const {src} = Info;
+    console.log(src)
 
     const [mounted, setMounted] = useState(false);
 

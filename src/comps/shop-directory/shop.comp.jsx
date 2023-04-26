@@ -1,7 +1,6 @@
 import Marille from '../../assets/marille-flasche.jpeg';
 import Wermuth from '../../assets/wermuthNOBG.png';
 import './shop.styles.css';
-import FingerBlack from '../../assets/fingerblack.png';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import BackArrow from '../../assets/backarrow.png';
@@ -9,10 +8,17 @@ import { useNavigate } from 'react-router-dom';
 import { Info } from '../../product-directory/product.info';
 import TabletShop from '../tablet-shop/tablet.shop.comp';
 import ShopInfo from '../shop-info/shop.info.comp';
+import { useContext } from 'react';
+import { CategoryContext } from '../contexts/categorie.ctx';
 
 
 const Shop = () => {
 
+  
+  const {categories, setCategories} = useContext(CategoryContext);
+  if(categories) { 
+    console.log(categories)}
+  
   const navigate = useNavigate();
 
     const products = [ Marille, Wermuth, Marille, Marille, Marille,  Wermuth, Marille, Marille];
@@ -52,6 +58,7 @@ const Shop = () => {
     }
 
     const [product, setProduct] = useState(0)
+    console.log(product)
     const {name, description} = Info[product]
     const [buttonColor, setButtonColor] = useState('var(--gin)')
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
